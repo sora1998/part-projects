@@ -5,7 +5,7 @@ This report presents our evaluation of ChatGPT3.5 across a diverse set of tasks,
 Large Language Models (LLMs) like ChatGPT3.5 have gained popularity for their adaptability in problem-solving. Understanding how to effectively formulate prompts for LLMs is crucial for achieving better results in various applications. LLMs are highly sensitive to prompts, and identifying patterns and preferences in prompt formulation can lead to improved performance and more accurate responses.
 
 ### Performance Evaluation
-###Knowledge-Based and Code-Related Questions
+### Knowledge-Based and Code-Related Questions
 Our evaluation reveals that ChatGPT3.5 excels in responding to knowledge-based and code-related questions. It demonstrates a baseline accuracy ranging from 60% to 70% in these domains.
 
 ### Challenges in Mathematical and Complex Reasoning Tasks
