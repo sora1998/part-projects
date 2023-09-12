@@ -18,8 +18,8 @@ We propose various prompt modification approaches to enhance model performance w
 ##### Integration of Relevant Information:
 Incorporating relevant information into the original questions to improve overall performance by 3% to 15%.
 
-##### Avoiding Irrelevant or Confusing Terms: E
-nsuring that prompts do not contain irrelevant or confusing terms, as they negatively impact accuracy.
+##### Avoiding Irrelevant or Confusing Terms: 
+Ensuring that prompts do not contain irrelevant or confusing terms, as they negatively impact accuracy.
 
 #### Enhancing Mathematical Problem-Solving
 For mathematical queries, we identified three methods to enhance model performance:
