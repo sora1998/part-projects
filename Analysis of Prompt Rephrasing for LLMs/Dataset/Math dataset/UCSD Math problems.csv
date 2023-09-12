@@ -1,0 +1,778 @@
+Question,Solution,Topic,Source,category
+"Find the scalar projection of v onto w. Also find the vector projection of v onto w. v=(2,1,3)^T, w=(6,3,9)^T","Solution: we want to find $\frac{v^{\mathrm{T}} w}{\|w\|}$ and $\frac{v^{\mathrm{T}} w}{w^{\mathrm{T}} w} w$. $\frac{v^{\mathrm{T}} w}{\|w\|}=\sqrt{14}$, and $\frac{v^{\mathrm{T}} w}{w^{\mathrm{T}} w} w=(2,1,3)^{\mathrm{T}}$.",Linear Algebra,Math 102,calculation
+"Find the scalar projection of v onto w. Also find the vector projection of v onto w. v=(2,-3)^T, w=(3,2)^T","Solution: we want to find $\frac{v^{\mathrm{T}} w}{\|w\|}$ and $\frac{v^{\mathrm{T}} w}{w^{\mathrm{T}} w} w$. $\frac{v^{\mathrm{T}} w}{\|w\|}=0$, and $\frac{v^{\mathrm{T}} w}{w^{\mathrm{T}} w} w=(0,0)^{\mathrm{T}}$.",Linear Algebra,Math 102,calculation
+"Find the scalar projection of v onto w. Also find the vector projection of v onto w. v=(4,1)^T, w=(3,2)^T","Solution: we want to find $\frac{v^{\mathrm{T}} w}{\|w\|}$ and $\frac{v^{\mathrm{T}} w}{w^{\mathrm{T}} w} w$. $\frac{v^{\mathrm{T}} w}{\|w\|}=\frac{14}{\sqrt{13}}$, and $\frac{v^{\mathrm{T}} w}{w^{\mathrm{T}} w} w=\frac{1}{13}(42,28)^{\mathrm{T}}$.",Linear Algebra,Math 102,calculation
+"Find the scalar projection of v onto w. Also find the vector projection of v onto w. v=(-2,3,1)^T, w=(1,2,4)^T","Solution: we want to find $\frac{v^{\mathrm{T}} w}{\|w\|}$ and $\frac{v^{\mathrm{T}} w}{w^{\mathrm{T}} w} w$. $\frac{v^{\mathrm{T}} w}{\|w\|}=\frac{8}{\sqrt{21}}$, and $\frac{v^{\mathrm{T}} w}{w^{\mathrm{T}} w} w=\frac{1}{21}(8,16,32)^{\mathrm{T}}$.",Linear Algebra,Math 102,calculation
+"Let $A$ be an $m \times n$ matrix. Show that if $x \in N\left(A^{\mathrm{T}} A\right)$, then $A x$ is in both $R(A)$ and $N\left(A^{\mathrm{T}}\right)$.","Solution: Let $x \in N\left(A^{\mathrm{T}} A\right)$, i.e. $A^{\mathrm{T}} A x=0$. Thus $A^{\mathrm{T}}(A x)=0$, so $A x \in N\left(A^{\mathrm{T}}\right)$. Clearly, $A x \in \operatorname{Range}(A)$.",Linear Algebra,Math 102,Proof
+Let $A$ be an $m \times n$ matrix. Show that $N\left(A^{\mathrm{T}} A\right)=N(A)$.,"Solution: Let $x \in N(A)$, so $A x=0$. Clearly, $A^{\mathrm{T}} A x=0$ as well, so $x \in N\left(A^{\mathrm{T}} A\right)$. Thus $N(A) \subseteq N\left(A^{\mathrm{T}} A\right)$. Now, let $x \in N\left(A^{\mathrm{T}} A\right)$, so $A^{\mathrm{T}} A x=0$. Then $$ x^{\mathrm{T}} A^{\mathrm{T}} A x=\|A x\|^2=0 . $$ Thus $A x=0$, so $x \in N(A)$. Thus $N\left(A^{\mathrm{T}} A\right)=N(A)$.",Linear Algebra,Math 102,Proof
+Let $A$ be an $m \times n$ matrix. Show that $A$ and $A^{\mathrm{T}} A$ have the same rank.,"Solution: Note that $\mathbb{R}^n=N(A) \bigoplus N(A)^{\perp}=N(A) \bigoplus R\left(A^{\mathrm{T}}\right)$. Thus, by dimension counting, $n=\operatorname{dim}(N(A))+\operatorname{dim}\left(R\left(A^{\mathrm{T}}\right)\right)=\operatorname{dim}(N(A))+\operatorname{Rank}\left(A^{\mathrm{T}}\right)$. Since the $\operatorname{Rank}\left(A^{\mathrm{T}}\right)=\operatorname{Rank}(A)$, we have $\operatorname{Rank}(A)=n-\operatorname{dim}(N(A))$. Similarly, $\mathbb{R}^n=N\left(A^{\mathrm{T}} A\right) \bigoplus N\left(A^{\mathrm{T}} A\right)^{\perp}=N\left(A^{\mathrm{T}} A\right) \bigoplus R\left(A^{\mathrm{T}} A\right)$. Thus $\operatorname{Rank}\left(A^{\mathrm{T}} A\right)=n-\operatorname{dim}\left(N\left(A^{\mathrm{T}} A\right)\right)$. But $N\left(A^{\mathrm{T}} A\right)=N(A)$, so the ranks are equal.",Linear Algebra,Math 102,Proof
+"Let $A$ be an $m \times n$ matrix. Show that if $A$ has linearly independent columns, then $A^{\mathrm{T}} A$ is nonsingular.","Solution: If $A$ has linearly independent columns, then $\operatorname{Rank}(A)=n$. Thus $\operatorname{Rank}\left(A^{\mathrm{T}} A\right)=$ $n$. Thus $A^{\mathrm{T}} A$ is an $n \times n$ matrix with $n$ linearly independent rows, thus is nonsingular.",Linear Algebra,Math 102,Proof
+Show that the diagonal entries of a Hermitian matrix must be real.,"Solution: Suppose $A$ is Hermitian, $A^H=A$, meaning $\overline{A_{i j}}=A_{j i}$ for all $i, j$. When $i=j, \overline{A_{i i}}=A_{i i}$, and hence $A_{i i} \in \mathbb{R}$ for all $i$. So all diagonal entries of $A$ are real.",Linear Algebra,Math 102,Proof
+"Let $A$ be an $n \times n$ Hermitian matrix and let $\boldsymbol{x}$ be a vector in $\mathbb{C}^n$. Show that if $c=x^H A x$, then $c$ is real.",Solution: $$ \bar{c}=c^H=\left(x^H A x\right)^H=x^H A^H x=x^H A x=c . $$ So $c$ is real.,Linear Algebra,Math 102,Proof
+"A fair coin is flipped three times. What is the probability that the second flip is tails, given that there is at most one tails among the three flips?","Solution: A = {second flip is tails} = {(H,T,H),(H,T,T),(T,T,H),(T,T,T)}, B = {at most one tails} = {(H, H, H),(H, H, T),(H,T,H),(T,H,H)}. Hence AB = {(H,T,H)}, P(A given B)=$\frac{1}{4}$",Probability,MATH 180A,reasoning
+"We have two urns. The first urn contains two balls labeled 1 and 2. The second urn contains three balls labeled 3, 4 and 5. We choose one of the urns at random (with equal probability) and then sample one ball (uniformly at random) from the chosen urn. What is the probability that we picked the ball labeled 5?","Solution: Let $\mathrm{A}$ be the event that we picked the ball labeled 5 and $B$ the event that we picked the first urn. Then we have $P(B)=1 / 2$, $P\left(B^c\right)=P($ we picked the second urn $)=$ $1 / 2$. Moreover, from the setup if the problem $P(A \mid B)=P$ (we chose the number $5 \mid$ we chose from the first urn) $=0$, $P\left(A \mid B^c\right)=P$ (we chose the number $5 \mid$ we chose from the second urn) $=\frac{1}{3}$. We compute $P(A)$ by conditioning on $B$ and $B^c$ : $$\begin{aligned} & P(A)=P(A \mid B) P(B)+ \\ & P\left(A \mid B^c\right) P\left(B^c\right) \\ & =0 \cdot \frac{1}{2}+\frac{1}{3} \cdot \frac{1}{2}=\frac{1}{6} \end{aligned}$$",Probability,MATH 180A,reasoning
+"I have a bag with 3 fair dice. One is 4-sided, one is 6-sided, and one is 12-sided. I reach into the bag, pick one at random and roll it. The outcome of the roll is 4. What is the probability that I pulled out the 6-sided die?",Solution: Define events: $A=\{$ outcome of the roll is 4$\}$ and $B_k=\{$ the k-sided die is picked\}. Then $$ P\left(B_6 \mid A\right)=\frac{P\left(A B_6\right)}{P(A)} \\ =\frac{\mathrm{P}\left(A \mid B_6\right) P\left(B_6\right)}{P\left(A \mid B_4\right) P\left(B_4\right)+P\left(A \mid B_6\right) P\left(B_6\right)+P\left(A \mid B_{12}\right) P\left(B_{12}\right)} \\ =\frac{\frac{1}{6} \cdot \frac{1}{3}}{\frac{1}{4} \cdot \frac{1}{3}+\frac{1}{6} \cdot \frac{1}{3}+\frac{1}{12} \cdot \frac{1}{3}}=\frac{1}{3} $$,Probability,MATH 180A,reasoning
+"Urn A contains 2 red and 4 white balls, and urn B contains 1 red and 1 white ball. A ball is randomly chosen from urn A and put into urn B, and a ball is then chosen from urn B. What is the conditional probability that the transferred ball was white given that a white ball is selected from urn B?",Solution: P (the event that the transferred ball was white | the event that a white ball was drawn from urn B) = 4/5,Probability,MATH 180A,reasoning
+"We produce a random real number X through the following two-stage experiment. First roll a fair die to get an outcome Y in the set {1, 2, ... , 6}. Then, if Y = k, choose X uniformly in the interval (0, k]. Find the cumulative distribution function F(s) and the probability density function f(s) of X for 3 < s < 4.","Solution: We begin by deriving the probability $F(s)=$ $P(X \leq s)$ using the law of total probability. For $s \in(3,4)$, $$ F(s)=P(X \leq s) = \sum_{k=1}^6 P(X \leq s \mid Y=k) P(Y=k) =\sum_{k=1}^3 \frac{1}{6}+\sum_{k=4}^6 * \frac{1}{6}=\frac{1}{2}+\frac{37 s}{360} .$$ We can find the density function $f$ on the interval $(3,4)$ by differentiating this. Thus $$ f(s)=F^{\prime}(s)=\frac{37}{360} \text { for } s \in(3,4) $$",Probability,MATH 180A,calculation
+"Let $Y$ be a random variable with density function $f(x)=\frac{2}{3} x$ for $x \in[1,2]$ and $f(x)=0$ otherwise. Compute $E\left[(Y-1)^2\right]$.",Solution: 7/18,Probability,MATH 180A HW4,calculation
+Let $Z$ have the following density function $$ f_Z(z)= \begin{cases}\frac{1}{7} & 1 \leq z \leq 2 \\ \frac{3}{7} & 5 \leq z \leq 7 \\ 0 & \text { otherwise }\end{cases} $$ Compute both $E[Z]$ and $\operatorname{Var (Z)$.,"Solution: E[Z] = 75/14, Var(Z) = 1633/588",Probability,MATH 180A HW4,calculation
+"In a school there are four kindergarten classes, with 21, 24, 17 and 28 students. We choose one of the 90 kindergarten students randomly, and denote the number of students in her class by $X$. Find the expectation and variance of $X$.","Solution: E[X] = 209/9, Var(X) = 1274/81",Probability,MATH 180A HW4,reasoning
+A pollster would like to estimate the fraction $p$ of people in a population who intend to vote for a particular candidate. How large must a random sample be in order to be at least $95 \%$ certain that the fraction $\widehat{p}$ of positive answers in the sample is within 0.02 of the true $p ?$,Solution: 2401,Probability,MATH 180A HW5,calculation
+How many randomly chosen guests should I invite to my party so that the probability of having a guest with the same birthday as mine is at least $2 / 3 ?$,Solution: we should invite at least 401 guests.,Probability,MATH 180A HW5,reasoning
+"Find the equation of the line that is parallel to the line $r(t)=(3,4,5)+t(5,4,3)$ and passes through the point $(1,2,3)$.","Solution: l(t) = (1, 2, 3) + t(5, 4, 3)",Calculus basics,MATH 20C Practice exam,calculation
+"Find the equation of a plane that contains the lines q(t) = (6, 2, 7) + t(2, 0, 1) and l(t) = (6, 2, 7) + t(0, 3, 2).",Solution: −3(x − 6) − 4(y − 2) + 6(z − 7) = 0,Calculus basics,MATH 20C Practice exam,calculation
+"Find all values of b where (b, 12) and (3, 2) are orthogonal.",Solution: b = -8,Calculus basics,MATH 20C Practice exam,calculation
+"Let $\vec{u}$ and $\vec{v}$ be vectors where $\|\vec{u}\|=5,\|\vec{v}\|=6$, and $\|\vec{u}+\vec{v}\|=9$. Find $\|\vec{u} \times \vec{v}\|$.",Solution: 10\sqrt{8},Calculus basics,MATH 20C Practice exam,calculation
+"Let $c(t)=\left(\cos t, \sin t, \sqrt{20} t^2\right)$ represent the position of a particle at time $t$. Find the equation of the tangent line at time $t=\pi$.","Solution: l(t) = (−1, 0, √20π2) + t(0, −1, 2√20π)",Calculus basics,MATH 20C Practice exam,calculation
+"Let $f(x, y)=x^2 y$, and let $g(x, y)=x^4+y^2$. Find an equation for the tangent plane to $g(x, y)$ at the point $(1,2,5)$",Solution: z=5+4(x-1)+4(y-2),Calculus basics,MATH 20C Practice exam,calculation
+"Let $f(x, y)=x^2 y$, and let $g(x, y)=x^4+y^2$. Let $P$ be the tangent plane to $g(x, y)$ at the point $(1,2,5)$. Find all points on the graph of $f$ that have tangent plane parallel to $P$. These points will have the format $(a, b, f(a, b))$","Solution: $(2,1,4)$ and $(-2,-1,-4)$",Calculus basics,MATH 20C Practice exam,calculation
+"Captain Ishmael Pogo is sailing the seven seas in search of Lugia, the great white legendary bird. Captain Pogo knows that Lugia travels only in the coldest waters, and is searching continuously in the coldest parts of the water. The temperature in Celsius of the water is given by $$ T(x, y)=-20 e^{-x^2-2 y^2}+20 $$ where $x$ and $y$ are measured in meters. Captain Pogo is currently at $(1,1)$ In what direction should Captain Pogo proceed in order for the temperature to decrease most rapidly? Express your answer as a unit vector.","Solution: $$ \left(-\frac{1}{\sqrt{5}},-\frac{2}{\sqrt{5}}\right) $$",Calculus basics,MATH 20C Practice exam,calculation
+"Captain Ishmael Pogo is sailing the seven seas in search of Lugia, the great white legendary bird. Captain Pogo knows that Lugia travels only in the coldest waters, and is searching continuously in the coldest parts of the water. The temperature in Celsius of the water is given by $$ T(x, y)=-20 e^{-x^2-2 y^2}+20 $$ where $x$ and $y$ are measured in meters. Captain Pogo is currently at $(1,1)$ If Captain Pogo is traveling at $e^4$ meters per second, what is the rate of change of the temperature if he proceeds in the direction of greatest decrease?",Solution: $$ -40 e \sqrt{5} $$,Calculus basics,MATH 20C Practice exam,calculation
+"Captain Ishmael Pogo is sailing the seven seas in search of Lugia, the great white legendary bird. Captain Pogo knows that Lugia travels only in the coldest waters, and is searching continuously in the coldest parts of the water. The temperature in Celsius of the water is given by $$ T(x, y)=-20 e^{-x^2-2 y^2}+20 $$ where $x$ and $y$ are measured in meters. Captain Pogo is currently at $(1,1)$ The ship will crack if the water temperature is decreasing at a rate greater than $20 e \sqrt{15}$ degrees per second. If Captain Pogo is still traveling at $e^4$ meters per second, what is the maximum angle from the gradient that Captain Pogo can travel to avoid cracking he ship because of the temperature change of the water?",Solution: $\frac{5 \pi}{6}$,Calculus basics,MATH 20C Practice exam,calculation
+"interface Iface {
+  public boolean m();
+  public int n();
+}
+
+class A implements Iface {
+  public String s;
+  public String x;
+
+  public boolean m() {
+    return true;
+  }
+
+  public int n() {
+    return 12;
+  }
+}
+
+class B implements Iface {
+  public String s;
+  public String y;
+
+  public boolean m() {
+    return false;
+  }
+
+  public int n() {
+    return 2;
+  }
+}
+
+Select all of the declarations below that would NOT cause a compile error:
+Choice 1 of 5: A a1 = new B();
+Choice 2 of 5: Iface i2 = new Iface();
+Choice 3 of 5: B b = new Iface();
+Choice 4 of 5: Iface i1 = new A();
+Choice 5 of 5: A a2 = new A();",Solution: Choice 4 and Choice 5,Computer Science: Java,CSE12 Review quiz 1,Multiple Choice
+"interface Iface {
+  public boolean m();
+  public int n();
+}
+
+class A implements Iface {
+  public String s;
+  public String x;
+
+  public boolean m() {
+    return true;
+  }
+
+  public int n() {
+    return 12;
+  }
+}
+
+class B implements Iface {
+  public String s;
+  public String y;
+
+  public boolean m() {
+    return false;
+  }
+
+  public int n() {
+    return 2;
+  }
+}
+
+Select all of the declarations below that would NOT cause a compile error:
+Choice 1 of 4:A a1 = new A(); String val3 = a1.s;
+Choice 2 of 4:Iface i2 = new B(); String val2 = i2.x;
+Choice 3 of 4:A a2 = new A(); String val4 = a2.y;
+Choice 4 of 4:Iface i1 = new A(); String val1 = i1.s;",Solution: Choice 1,Computer Science: Java,CSE12 Review quiz 1,Multiple Choice
+"What would be printed when the main method is executed?
+class Q3 {
+  A a1 = new A();
+  boolean val1 = a1.m();
+
+  Iface i1 = new B();
+  int val2 = i1.n();
+
+  Iface i2 = a1;
+  int val3 = i2.n();
+
+  public static void main(String[] args){
+    Q3 q = new Q3();
+    System.out.println(q.val1 + "", "" + q.val2 + "", "" + q.val3);
+  }
+}
+
+Choice 1 of 6:true, 2, 2
+
+Choice 2 of 6:true, 12, 2
+
+Choice 3 of 6:false, 2, 12
+
+Choice 4 of 6:false, 12, 12
+
+Choice 5 of 6:false, 12, 2
+
+Choice 6 of 6:true, 2, 12",Solution: Choice 6,Computer Science: Java,CSE12 Review quiz 1,Multiple Choice
+"class Song {
+  String title;
+  String artist;
+  int year;
+
+  public Song(String title, String artist, int year) {
+    this.title = title;
+    this.artist = artist;
+    this.year = year;
+  }
+}
+
+class Playlist {
+  String title;
+  Song[] songs;
+  int numSongs;
+
+  public Playlist(int length, String title) {
+    this.title = title;
+    this.songs = new Song[length];
+    this.numSongs = 0;
+    for (int i = 0; i < songs.length; i++) {
+      this.songs[i] = new Song("""", """", 0);
+    }
+  }
+
+  public Playlist(String title, int length) {
+    this.title = title;
+    this.songs = new Song[length];
+    this.numSongs = 0;
+  }
+
+  public boolean setSong(int index, Song song) {
+    if (index >= this.songs.length || index < 0) return false;
+    this.songs[index] = song;
+    return true;
+  }
+
+  // returns false if playlist already full, else true
+  public boolean addSong(Song newSong) {
+    if (this.songs.length == this.numSongs) return false;
+    this.songs[this.numSongs] = newSong;
+    this.numSongs++;
+    return true;
+  }
+}
+Q2.1 How many total Song and Playlist objects are created?
+
+Playlist playlist1 = new Playlist(""90s Pop"", 3);
+Song song1 = new Song(""Say My Name"", ""Destiny's Child"", 1999);
+Song song2 = new Song(""I Want It That Way"", ""Backstreet Boys"", 1999);
+playlist1.addSong(song1);
+playlist1.addSong(song2);
+
+Choice 1 of 5:3
+
+Choice 2 of 5:4
+
+Choice 3 of 5:5
+
+Choice 4 of 5:6
+
+Choice 5 of 5:7",Solution: Choice 1,Computer Science: Java,CSE12 Review quiz 1,Multiple Choice
+"class Song {
+  String title;
+  String artist;
+  int year;
+
+  public Song(String title, String artist, int year) {
+    this.title = title;
+    this.artist = artist;
+    this.year = year;
+  }
+}
+
+class Playlist {
+  String title;
+  Song[] songs;
+  int numSongs;
+
+  public Playlist(int length, String title) {
+    this.title = title;
+    this.songs = new Song[length];
+    this.numSongs = 0;
+    for (int i = 0; i < songs.length; i++) {
+      this.songs[i] = new Song("""", """", 0);
+    }
+  }
+
+  public Playlist(String title, int length) {
+    this.title = title;
+    this.songs = new Song[length];
+    this.numSongs = 0;
+  }
+
+  public boolean setSong(int index, Song song) {
+    if (index >= this.songs.length || index < 0) return false;
+    this.songs[index] = song;
+    return true;
+  }
+
+  // returns false if playlist already full, else true
+  public boolean addSong(Song newSong) {
+    if (this.songs.length == this.numSongs) return false;
+    this.songs[this.numSongs] = newSong;
+    this.numSongs++;
+    return true;
+  }
+}
+How many total Song and Playlist objects are created?
+
+Playlist playlist2 = new Playlist(4, ""More 90s Pop"");
+Song song3 = new Song(""Wannabe"", ""Spice Girls"", 1996);
+Song song4 = new Song(""...Baby One More Time"", ""Britney Spears"", 1998);
+playlist2.setSong(2, song3);
+playlist2.setSong(0, song4);
+
+Choice 1 of 6:6
+
+Choice 2 of 6:4
+
+Choice 3 of 6:3
+
+Choice 4 of 6:5
+
+Choice 5 of 6:8
+
+Choice 6 of 6:7",Solution: Choice 6,Computer Science: Java,CSE12 Review quiz 1,Multiple Choice
+"For Questions 1, refer to the implementation AList used in class and the following code:
+
+public class AList<E> implements List<E> {
+
+  E[] elements;
+  int size;
+
+  @SuppressWarnings(""unchecked"")
+  public AList() {
+    this.elements = (E[])(new Object[2]);
+    this.size = 0;
+  }
+
+  public void add(E s) {
+    expandCapacity();
+    this.elements[this.size] = s;
+    this.size += 1;
+  }
+
+  public E get(int index) {
+    if(index < 0 || index >= this.size) {
+      throw new IndexOutOfBoundsException();
+    }
+    return this.elements[index];
+  }
+
+  public int size() {
+    return this.size;
+  }
+
+  @SuppressWarnings(""unchecked"")
+  private void expandCapacity() {
+    // NOTE(joe): I changed currentSize to currentCapacity below
+    // because it's a better name for the variable
+    int currentCapacity = this.elements.length;
+    if(this.size < currentCapacity) { return; }
+
+    E[] expanded = (E[])(new Object[currentCapacity * 2]);
+
+
+    for(int i = 0; i < this.size; i += 1) {
+      expanded[i] = this.elements[i];
+    }
+    this.elements = expanded;
+  }
+}
+Which of the following AList declarations will result in a compile error? Check all that apply:
+Choice 1 of 6:AList<AList<String>> myList = new AList<AList<String>>();
+Choice 2 of 6:List<Integer> myList = new AList<Integer>();
+Choice 3 of 6:AList myList<Integer> = new AList<Integer>();
+Choice 4 of 6:AList<int> myList= new AList<int>();
+Choice 5 of 6:AList<Object> myList = new AList<Object>();
+Choice 6 of 6:AList<E> myList = new AList<String>();","Solution: Choice 3, 4, 6",Computer Science: Java,CSE12 Review quiz 2,Multiple Choice
+"For Questions 1, refer to the implementation AList used in class and the following code:
+
+public class AList<E> implements List<E> {
+
+  E[] elements;
+  int size;
+
+  @SuppressWarnings(""unchecked"")
+  public AList() {
+    this.elements = (E[])(new Object[2]);
+    this.size = 0;
+  }
+
+  public void add(E s) {
+    expandCapacity();
+    this.elements[this.size] = s;
+    this.size += 1;
+  }
+
+  public E get(int index) {
+    if(index < 0 || index >= this.size) {
+      throw new IndexOutOfBoundsException();
+    }
+    return this.elements[index];
+  }
+
+  public int size() {
+    return this.size;
+  }
+
+  @SuppressWarnings(""unchecked"")
+  private void expandCapacity() {
+    // NOTE(joe): I changed currentSize to currentCapacity below
+    // because it's a better name for the variable
+    int currentCapacity = this.elements.length;
+    if(this.size < currentCapacity) { return; }
+
+    E[] expanded = (E[])(new Object[currentCapacity * 2]);
+
+
+    for(int i = 0; i < this.size; i += 1) {
+      expanded[i] = this.elements[i];
+    }
+    this.elements = expanded;
+  }
+}
+What is the correct syntax for initializing an array of generic data type?
+
+Choice 1 of 5:E[] elements = (E[])(new Object[2]);
+
+Choice 2 of 5:E[] elements = new E[2];
+
+Choice 3 of 5:Object[] elements = new Object[2];
+
+Choice 4 of 5:E[] elements = new E[2]();
+
+Choice 5 of 5:Object[] elements = (Object[])(new E[2]);",Solution: Choice 1,Computer Science: Java,CSE12 Review quiz 2,Multiple Choice
+"Refer to the following method:
+
+// This method returns whether or not a pair of numbers,
+// num1 and num2, are between 1-m and 1-n, respectively
+boolean findPair(int num1, int num2, int m, int n) {
+    for (int i = 1; i <= m; i++) {
+        if (num1 == i) {
+            for (int j = 1; j <= n; j++) {
+                if (num2 == j) {
+                    return true;
+                } 
+            }
+        }
+    }
+    return false;
+}
+Q6.1 What is the worst case runtime of findPair?
+
+Choice 1 of 5:O(m/n)
+
+Choice 2 of 5:O(n)
+
+Choice 3 of 5:O(m*n)
+
+Choice 4 of 5:O(m)
+
+Choice 5 of 5:O(m+n)",Solution: Choice 5,Computer Science: Java,CSE12 Review quiz 2,Multiple Choice
+"Refer to the following method:
+
+// This method returns whether or not a pair of numbers,
+// num1 and num2, are between 1-m and 1-n, respectively
+boolean findPair(int num1, int num2, int m, int n) {
+    for (int i = 1; i <= m; i++) {
+        if (num1 == i) {
+            for (int j = 1; j <= n; j++) {
+                if (num2 == j) {
+                    return true;
+                } 
+            }
+        }
+    }
+    return false;
+}
+
+What is the best case runtime of findPair given it returns false?
+
+Choice 1 of 5:O(m*n)
+
+Choice 2 of 5:O(m)
+
+Choice 3 of 5:O(1)
+
+Choice 4 of 5:O(m+n)
+
+Choice 5 of 5:O(n)",Solution: Choice 2,Computer Science: Java,CSE12 Review quiz 2,Multiple Choice
+"Check which of the following are true:
+
+Choice 1 of 4:1/(n^2) + 5 = O(1/n)
+Choice 2 of 4:n! + n^2 = O(nlog(n))
+Choice 3 of 4:n + 5n^3 + 8n^4 = O(n)
+Choice 4 of 4:2^n + nlog(n) = O(n!)",Solution: Choice 4,Computer Science: Java,CSE12 Review quiz 2,Multiple Choice
+"Given n is a very large number, which of the following correctly orders the time complexities from fastest to slowest:
+
+Choice 1 of 6:n, 2^n, n^2, n!, log(n)
+
+Choice 2 of 6:n, log(n), n^2, n!, 2^n
+
+Choice 3 of 6:log(n), n, n^2, n!, 2^n
+
+Choice 4 of 6:log(n), n, n!, 2^n, n^2
+
+Choice 5 of 6:log(n), n, n^2, 2^n, n!
+
+Choice 6 of 6:log(n), n, n!, n^2, 2^n",Solution: Choice 5,Computer Science: Java,CSE12 Review quiz 2,Multiple Choice
+"Which of the following will result in the most number of element comparisons using selection sort? Select all that apply:
+
+Choice 1 of 5:{1, 3, 5, 2, 4}
+Choice 2 of 5:{1, 2, 3, 4, 5}
+Choice 3 of 5:{5, 4, 3, 2, 1}
+Choice 4 of 5:{1, 1, 1, 1, 1}
+Choice 5 of 5:{1, 4, 5, 3, 2}","Solution: Choice 1,2,3,4,5",Computer Science: Java,CSE12 Review quiz 3,Multiple Choice
+"How many swaps will occur when performing insertion sort on {5, 3, 7, 6, 2, 9}?
+Choice 1 of 6:10
+
+Choice 2 of 6:5
+
+Choice 3 of 6:6
+
+Choice 4 of 6:7
+
+Choice 5 of 6:3
+
+Choice 6 of 6:9",Solution: Choice 3,Computer Science: Java,CSE12 Review quiz 3,Multiple Choice
+"Which of the following descriptions of pivot selection will result in the best case quicksort runtime?
+
+Choice 1 of 5:Choosing the median index as the pivot
+
+Choice 2 of 5:Choosing the median value as the pivot
+
+Choice 3 of 5:There is no definite pivot selection method that will always result in best case runtime
+
+Choice 4 of 5:Choosing the first value as the pivot
+
+Choice 5 of 5:Randomly choosing the pivot",Solution: Choice 2,Computer Science: Java,CSE12 Review quiz 3,Multiple Choice
+"Consider the merge sort from class. How many times will the element at index 0 be copied when sorting an array of length n over the entire run of the algorithm?
+
+Choice 1 of 5:log(n)
+
+Choice 2 of 5:n/2
+
+Choice 3 of 5:2*log(n)
+
+Choice 4 of 5:n
+
+Choice 5 of 5:1",Solution: Choice 3,Computer Science: Java,CSE12 Review quiz 3,Multiple Choice
+"Which of the following statements about sorting are true?
+
+Choice 1 of 5:The worst cases for selection sort and insertion sort occur when an array is in reversed order
+Choice 2 of 5:The best case time of all sorts is O(1) because of the case when an array is length 1
+Choice 3 of 5:Merge sort has best and worst cases of O(nlog(n))
+Choice 4 of 5:Quicksort is O(n^2) only when an array is in reversed order
+Choice 5 of 5:If arrays are split into thirds instead of halves in merge sort, the best case would still be O(nlog(n)) HINT: look up the rules of logs!","Solution: Choice 1,3,5",Computer Science: Java,CSE12 Review quiz 3,Multiple Choice
+"Let f(n) = n^2 + nlogn + n. Select all true statements
+
+Choice 1 of 4:f(n) ? O(n^2)
+Choice 2 of 4:f(n) ? O(n)
+Choice 3 of 4:f(n) ? O(n^3)
+Choice 4 of 4:f(n) ? O(nlogn)","Solution: Choice 1,3",Computer Science: Java,CSE12 Review quiz 3,Multiple Choice
+"Given the following piece of code, please select the most accurate runtime (i.e. tightest bound) for the worst case scenario.
+
+for (i = 0; i < myArray.length-1; i++)  {
+   myArray[i] += myArray[i+1];
+   myArray[i+1] = myArray[i];
+}
+
+for (j = myArray.length-1; j > 1; j = j/2) {
+   if (myArray[j] < 0) {
+      myArray[j+1] = myArray[j];
+   }
+}
+Assume N = myArray.length
+
+Choice 1 of 5: O(N*log(N))
+
+Choice 2 of 5: O(1)
+
+Choice 3 of 5: O(log(N))
+
+Choice 4 of 5: O(N)
+
+Choice 5 of 5: O(N^2)",Solution: Choice 4,Computer Science: Java,CSE12 Review quiz 3,Multiple Choice
+"Which of the following statements about hash tables is/are true? Refer to the hash table from lecture.
+
+Choice 1 of 7:A hash table can have keys of only one type
+Choice 2 of 7:Hash tables are ordered by keys
+Choice 3 of 7:A hash table can have values of multiple types
+Choice 4 of 7:All values must be unique
+Choice 5 of 7:Items are stored as key, value pairs
+Choice 6 of 7:The best case for get and set is O(n)
+Choice 7 of 7:All keys must be unique","Solution: Choice 1,5,7",Computer Science: Java,CSE12 Review quiz 4,Multiple Choice
+"Refer to the following hash function:
+
+int getIndex(String k) {
+    return k.length() % 10;
+}
+
+Using the above hash function, which of the following pairs of subsequent set calls will result in a collision, assuming that the current number of buckets is large enough to store all the elements? (the hash table uses String keys and double values)
+
+Choice 1 of 5:set(""sandwich"", 4); set(""salad"", 5);
+Choice 2 of 5:set(""coca cola"", 2); set(""coke zero"", 2);
+Choice 3 of 5:set(""boba"", 4.5); set(""crispy chicken"", 8.5);
+Choice 4 of 5:set(""shampoo"", 2); set(""conditioner"", 3);
+Choice 5 of 5:set(""water bottle"", 1.5); set(""flamin' hot cheetohs"", 2);","Solution: Choice 2,3",Computer Science: Java,CSE12 Review quiz 4,Multiple Choice
+"Which of the following relationships hold?
+
+Choice 1 of 6:1/n + log(n) * n^2 is O(n^2)
+Choice 2 of 6:n log(n) + n^2 is ?(log(n) n^2)
+Choice 3 of 6:n^2 + n^3 is ?(n^3)
+Choice 4 of 6:(n^4)/log(n) is ?(n^4)
+Choice 5 of 6:1/(n^10) + 100 is ?(1)
+Choice 6 of 6:n + log(n) is O(log(n))","Solution: Choice 3,5",Computer Science: Java,CSE12 Review quiz 4,Multiple Choice
+"For Question 4, refer to the following sort method:
+
+public static void mysterySort(int[] arr) {
+    for (int i = arr.length - 1; i >= 0; i--) {
+        for (int j = i; j < arr.length - 1; j++) {
+            if(arr[j] > arr[j + 1]) {
+                int temp = arr[j + 1];
+                arr[j + 1] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+}
+Which type of sort is implemented in the above method?
+
+Choice 1 of 5:None of the above
+
+Choice 2 of 5:Selection sort
+
+Choice 3 of 5:Insertion sort
+
+Choice 4 of 5:Quick sort
+
+Choice 5 of 5:Merge sort",Solution: Choice 3,Computer Science: Java,CSE12 Review quiz 4,Multiple Choice
+"What are the best and worst case time complexities, respectively, of adding a new value to a BST, where n is the number of nodes in the tree?
+
+Choice 1 of 5:theta(log(n)), theta(log(n))
+
+Choice 2 of 5:theta(1), theta(n)
+
+Choice 3 of 5:theta(1), theta(log(n))
+
+Choice 4 of 5:theta(log(n)), theta(n)
+
+Choice 5 of 5:theta(n), theta(n)",Solution: Choice 4,Computer Science: Java,CSE12 Review quiz 4,Multiple Choice
+"True or False: This code-will compile:
+LinkedList<? extends List> myL = new LinkedList<ArrayList>();",Solution: True,Computer Science: Java,DSC30 midterm 2,True False
+"True or False: If item A is an ancestor of item B in a heap (it means if you start from B and walk up to the root, then you will get to A on your path) then it must be the case that the Insert operation for item A occurred before the Insert operation for item B.",Solution: False,Computer Science: Java,DSC30 midterm 2,True False
+True or False: Empirical testing allows us to analyze the runtime of code without looking at the actual implementation.,Solution: True,Computer Science: Java,DSC30 midterm 2,True False
+True or False: The largest value in a binary search tree is always stored at the root of the tree.,Solution: False,Computer Science: Java,DSC30 midterm 2,True False
+"True or False: In adapter pattern design, a class A can borrow an existing abstract data type SomeObject by inheriting SomeObject.",Solution: False,Computer Science: Java,DSC30 midterm 2,True False
+True or False: Unchecked exceptions never need to be handled.,Solution: True,Computer Science: Java,DSC30 midterm 1,True False
+True or False: The Math.sqrt() method in Java is a static method.,Solution: True,Computer Science: Java,DSC30 midterm 1,True False
+True or False: Child class's method signature must be identical to its parent class to be overridden.,Solution: True,Computer Science: Java,DSC30 midterm 1,True False
+True or False: A class can extend multiple classes but implement only a single interface.,Solution: False,Computer Science: Java,DSC30 midterm 1,True False
+"True or False: Protected variables of a class can be directly-accessed through its child class, without a getter/setter method. ",Solution: True,Computer Science: Java,DSC30 midterm 1,True False
+True or False: The main() method of a class can access all public instance variables of the same class.,Solution: False,Computer Science: Java,DSC30 midterm 1,True False
+"Suppose we are given a circular, array-based queue which is capable of holding 100 objects. Objects are inserted into this queue at a rate of 10 per minute while, at the same time, objects are processed and removed from the queue at a rate of 5 per minute. Suppose the queue is initially empty, which of the following is true after 120 objects have been added to the queue?
+
+A. You cannot add 120 elements to an array holding 100 entries.
+B. There will be 60 elements in the queue, 30 of them at the front of the array where the queue started, and 30 at the other end.
+C. There will be 60 elements in the queue, 20 of them at the front of the array where the queue started, and 40 at the other end.
+D. There will be 60 elements in the queue, 40 of them at the front of the array where the queue started, and 20 at the other end.
+E. None of the above.",Solution: C,Computer Science: Java,DSC30 midterm 1,Multiple Choice
+"A standard deck of cards contains 52 cards. There are 13 cards in each of 4 suits 
+
+You are playing a four-player card game using two regular decks of cards. Each player will be dealt 26 cards as follows: the first deck of cards will be randomly shuffled and dealt out, 13 cards to each of the four players. Then the second deck of cards will be randomly shuffled and dealt out, 13 cards to each of the four players.
+
+Let Event A='you are dealt two Kings of Hearts' and Event B='some other player has a pair of Kings of Hearts'. Are these two events independent of each other?",Solution: not independent,Probability,DSC40A HW7,calculation
+"A standard deck of cards contains 52 cards. There are 13 cards in each of 4 suits 
+
+You are playing a four-player card game using two regular decks of cards. Each player will be dealt 26 cards as follows: the first deck of cards will be randomly shuffled and dealt out, 13 cards to each of the four players. Then the second deck of cards will be randomly shuffled and dealt out, 13 cards to each of the four players.
+
+Let Event A='you are dealt two Kings of Hearts' and Event C='some other player has a pair of Aces of Hearts'. Are these two events independent of each other?",Solution: not independent,Probability,DSC40A HW7,calculation
+"A standard deck of cards contains 52 cards. There are 13 cards in each of 4 suits 
+
+You are playing a four-player card game using two regular decks of cards. Each player will be dealt 26 cards as follows: the first deck of cards will be randomly shuffled and dealt out, 13 cards to each of the four players. Then the second deck of cards will be randomly shuffled and dealt out, 13 cards to each of the four players.
+
+Now suppose that you know you do not have any Aces of Hearts. Let Event A='you are dealt two Kings of Hearts' and Event C='some other player has a pair of Aces of Hearts'. Now that you know you don't have any Aces of Hearts, are these two events independent of each other?",Solution: independent,Probability,DSC40A HW7,calculation
+Suppose that your baseball team has 12 players but you only have 9 matching team hats. How many ways are there for you to select who gets a hat and who doesn't?,"Solution: C(12,9)=220",Probability,DSC40A HW6,reasoning
+"Suppose that your baseball team has 12 players and you have 15 jerseys, numbered 1 through 15. You will give out one jersey to each player, and three will be leftover. How many ways are there for you to assign jerseys to players?","Solution: P(15,12)=2.179*10^11",Probability,DSC40A HW6,reasoning
+"Your baseball team has 12 players and you have 15 jerseys, numbered 1 through 15 . You will give out one jersey to each player, and three will be leftover. How many ways are there for you to assign jerseys to players if you must give out jersey number 1?","Solution: 12*P(14,11) or C(14, 11)*12! 1.744*10^11",Probability,DSC40A HW6,reasoning
+"Suppose that at the batting range, where a machine pitches the ball, each time you swing the bat, your probability of hitting the ball is 3/4. If you swing 9 times, what is the probability that you hit the ball exactly 7 times?","Solution: C(9,7)*(3/4)^7*(1/4)^2=0.3",Probability,DSC40A HW6,reasoning
+"Suppose that when a pitcher is throwing the ball, your probability of hitting the ball depends on the kind of pitch. Your probability of hitting the ball is
+- 1/2 for a fastball,
+- 1/3 for a breaking ball, and
+- 1/4 for a changeup
+Suppose that at practice, a pitcher throws you three fastballs, three breaking balls, and three changeups. What is the probability that you miss one breaking ball and one changeup, but hit all 7 other balls?",Solution: 9*(1/2)^3*(1/3)^2*(2/3)*(1/4)^2*(3/4)=0.0039,Probability,DSC40A HW6,reasoning
+"Suppose that at practice, a pitcher throws you three fastballs, three breaking balls, and three changeups, and your probability of hitting each is as below:
+- 1/2 for a fastball,
+- 1/3 for a breaking ball, and
+- 1/4 for a changeup
+What is the probability that you hit the ball exactly 7 times?
+Hint: Use cases.",Solution: 0.010,Probability,DSC40A HW6,reasoning
+"To break a tie among a group of n>=3 people, you come up with the following tiebreaker:
+- Everyone flips a coin.
+- If one person's coin is different from all the others, that person wins, and the tie is broken!
+- Otherwise, repeat the process.
+
+a) What is the probability that the tie is broken after the first coin toss?",Solution: 2n/2^n=n/2^(n-1),Probability,DSC40A HW6,reasoning
+"To break a tie among a group of n>=3 people, you come up with the following tiebreaker:
+- Everyone flips a coin.
+- If one person's coin is different from all the others, that person wins, and the tie is broken!
+- Otherwise, repeat the process.
+
+Fix an integer k>=1. Find the probability that the tie is broken after exactly $k$ coin tosses?",Solution: (1-A)^(k-1)*A where A=n/2^(n-1),Probability,DSC40A HW6,reasoning
+"A toy called 5 Surprise Mini Brands is a plastic capsule containing five miniature replicas of branded household products, like Skippy Peanut Butter, Dove Bodywash, Kikkoman Soy Sauce, or Breyers Ice Cream. Each capsule is a surprise; you don't know which minis it will contain until you open it! We'll assume for this problem that there are 70 possible products, each of which is manufactured in equal quantities, so you're no more likely to get any one product than any other.
+a) Suppose that each capsule contains five different randomly selected products. If you buy two capsules, what is the probability that you end up with exactly five distinct products?","Solution: 1/C(70,5) or P(5,5)/P(70,5) or 8.262*10^-8",Probability,DSC40A HW6,reasoning
+"A toy called 5 Surprise Mini Brands is a plastic capsule containing five miniature replicas of branded household products, like Skippy Peanut Butter, Dove Bodywash, Kikkoman Soy Sauce, or Breyers Ice Cream. Each capsule is a surprise; you don't know which minis it will contain until you open it! We'll assume for this problem that there are 70 possible products, each of which is manufactured in equal quantities, so you're no more likely to get any one product than any other.
+
+Suppose that each capsule contains five different randomly selected products. If you buy two capsules, what is the probability that you end up with exactly ten distinct products?","Solution: C(65,5)/C(70,5)=P(65,5)/P(70,5)=0.682",Probability,DSC40A HW6,reasoning
+"A toy called 5 Surprise Mini Brands is a plastic capsule containing five miniature replicas of branded household products, like Skippy Peanut Butter, Dove Bodywash, Kikkoman Soy Sauce, or Breyers Ice Cream. Each capsule is a surprise; you don't know which minis it will contain until you open it! We'll assume for this problem that there are 70 possible products, each of which is manufactured in equal quantities, so you're no more likely to get any one product than any other.
+
+Suppose that each capsule contains five randomly selected products, any of which could be the same. That is, each of the five products is equally likely to be any of the 70 possible products. If you buy two capsules, what is the probability that you end up with exactly ten distinct products?","Solution: P(70,10)/70^10=0.510",Probability,DSC40A HW6,reasoning
+"A toy called 5 Surprise Mini Brands is a plastic capsule containing five miniature replicas of branded household products, like Skippy Peanut Butter, Dove Bodywash, Kikkoman Soy Sauce, or Breyers Ice Cream. Each capsule is a surprise; you don't know which minis it will contain until you open it! We'll assume for this problem that there are 70 possible products, each of which is manufactured in equal quantities, so you're no more likely to get any one product than any other.
+
+Suppose that each capsule contains five randomly selected products, any of which could be the same. That is, each of the five products is equally likely to be any of the 70 possible products. If you buy two capsules, what is the probability that you end up with exactly nine distinct products?","Solution: C(10,2)*P(69,8)/70^9=C(10,2)*P(70,9)/70^10=0.376",Probability,DSC40A HW6,reasoning
+"Let S be a sample space, and let A, E_1, E_2, E_3 be events in that sample space. Suppose that E_1 intersects E_2, E_1 intersects E_3, and E_2 intersects E_3 are all empty. Given the following probabilities, find P(E_2|A) :
+P(E_1)=1/6 
+P(A|E_1)=1/9
+P(E_2)=1/3 
+P(A|E_2)=1/7
+P(E_3)=1/2
+P(A|E_3)=1/5",Solution: 45/157=0.2866,Probability,DSC40A HW6,reasoning
+"In this problem, we will look at a made-up game called Stringle. Each day, a random six-letter string is chosen, and players have to try to guess what it is.
+
+In Stringle, any six-letter string of uppercase letters is allowed, as long as it does not have any repeated letters. The string does not have to make sense as an English word. For example, the string of the day might be ZVODUP. Any valid string is equally likely to be chosen each day.
+a) Consider A, E, I, O, U, and Y to be vowels. What is the probability that today's Stringle string and yesterday's Stringle string both start with a vowel?",Solution: (6/26)^2=9/169=0.0533,Probability,DSC40A HW5,reasoning
+"In this problem, we will look at a made-up game called Stringle. Each day, a random six-letter string is chosen, and players have to try to guess what it is.
+
+In Stringle, any six-letter string of uppercase letters is allowed, as long as it does not have any repeated letters. The string does not have to make sense as an English word. For example, the string of the day might be ZVODUP. Any valid string is equally likely to be chosen each day.
+
+What is the probability that today's Stringle string or yesterday's Stringle string starts with a vowel?",Solution: (6/26)+(6/26)-(6/26)^2=69/169=0.4083,Probability,DSC40A HW5,reasoning
+"In this problem, we will look at a made-up game called Stringle. Each day, a random six-letter string is chosen, and players have to try to guess what it is.
+
+In Stringle, any six-letter string of uppercase letters is allowed, as long as it does not have any repeated letters. The string does not have to make sense as an English word. For example, the string of the day might be ZVODUP. Any valid string is equally likely to be chosen each day.
+
+What is the probability that today's Stringle string includes no vowels?",Solution: 0.168,Probability,DSC40A HW5,reasoning
+"In this problem, we will look at a made-up game called Stringle. Each day, a random six-letter string is chosen, and players have to try to guess what it is.
+
+In Stringle, any six-letter string of uppercase letters is allowed, as long as it does not have any repeated letters. The string does not have to make sense as an English word. For example, the string of the day might be ZVODUP. Any valid string is equally likely to be chosen each day.
+
+What is the probability that today's Stringle string includes all vowels?",Solution: 1/230230,Probability,DSC40A HW5,reasoning
+"In this problem, we will look at a made-up game called Stringle. Each day, a random six-letter string is chosen, and players have to try to guess what it is.
+
+In Stringle, any six-letter string of uppercase letters is allowed, as long as it does not have any repeated letters. The string does not have to make sense as an English word. For example, the string of the day might be ZVODUP. Any valid string is equally likely to be chosen each day.
+
+What is the probability that today's Stringle string includes the letter J?",Solution: 6/26=3/13=0.23077,Probability,DSC40A HW5,reasoning
+"In this problem, we will look at a made-up game called Stringle. Each day, a random six-letter string is chosen, and players have to try to guess what it is.
+
+In Stringle, any six-letter string of uppercase letters is allowed, as long as it does not have any repeated letters. The string does not have to make sense as an English word. For example, the string of the day might be ZVODUP. Any valid string is equally likely to be chosen each day.
+
+What is the probability that today's Stringle string is exactly the same as yesterday's Stringle string?","Solution: 1/P(26,6)=1/165765600",Probability,DSC40A HW5,reasoning
+True or False: Maximum Likelihood Estimation (MLE) assumes all values of any parameter to be equally likely.,Solution: True,ML/DL,CSE251B midterm1,True False
+True or False: The dimension of any principal component is the same as the dimension of the original data.,Solution: True,ML/DL,CSE251B midterm1,True False
+"True or False: Although Siamese networks do not have explicit targets for outputs, they can still cluster outputs into classes.",Solution: True,ML/DL,CSE251B midterm1,True False
+True or False: Residual connections are included in convolutional neural networks to prevent exploding gradients.,Solution: False,ML/DL,CSE251B midterm1,True False
+True or False: Momentum helps convergence speed by increasing it along inconsistent gradients and decreasing it along consistent ones.,Solution: False,ML/DL,CSE251B midterm1,True False
+"True or False: If we initialize all of the weights and biases to zero in a one-hidden layer neural network with logistic units, the hidden units will all compute the same feature.",Solution: True,ML/DL,CSE251B midterm1,True False
+True or False: Scale invariance is built in to a standard convolutional neural network.,Solution: False,ML/DL,CSE251B midterm1,True False
+True or False: Adversarial examples often generalize to networks they weren't developed on.,Solution: True,ML/DL,CSE251B midterm1,True False
+"True or False: If you add a constant to every weighted sum of the inputs to a softmax layer, the results will be exactly the same.",Solution: True,ML/DL,CSE251B midterm1,True False
+"Which statements are correct about regularization?
+(i) L1 Regularization penalizes all weights the same.
+(ii) L1 Regularization penalizes small weights more.
+(iii) L2 Regularization penalizes all weights the same.
+(v) L2 Regularization penalizes the large weights more.","Solution: (i),(iv)",ML/DL,CSE251B midterm1,Multiple Choice
+"If you observe the training error goes up at the beginning of training a neural network. which of the following is a possible problem?
+(i) The learning rate is too low
+(ii) The learning rate is too high
+(iii) The regularization parameter $\lambda$ is too high
+(iv) The weight change update rule has the incorrect sign, i.e., weights are getting updated in the incorrect direction.","Solution: (ii), (iii), (iv)",ML/DL,CSE251B midterm1,Multiple Choice
+"Which of the following statements about training and generalization are true?
+(i) We can regularize a model (i.e. obtain better generalization) by adding more real data to the training set.
+(ii) For the same training procedure, if Model A gets an accuracy of 80% and a loss of 1.2 , and Model B gets an accuracy of 85% and a loss of 1.5 , then there is a bug in the training procedure.
+(iii) Learning rate used for training one model on CIFAR-100 will also work on CIFAR-10 and we don't need to tune it.
+iv) To obtain the best results, it's a good idea to lower the learning rate when the loss flattens out.","Solution: (i), (iv)",ML/DL,CSE251B midterm1,Multiple Choice
+"Which of the following are true about Maximum Likelihood as applied to determining objective functions for feed-forward neural nets?
+(i) Is not Bayesian, as it doesn't take into account the priors.
+(ii) In order to determine the correct objective function using Maximum Likelihood. It's important to characterize the probability distribution of the data, and in particular, the pdf of the input data.
+(iii) For logistic regression. one should assume that the targets are Gaussian distributed, as that is the highest entropy distribution.
+(iv) The goal of Maximum Likelihood is to maximize the probability of the targets, given the inputs.",Solution: (i),ML/DL,CSE251B midterm1,Multiple Choice
+"Which of the following can be used to perform dimensionality reduction on data?
+(i) Principal Components Analysis
+(ii) Siamese Networks
+(iii) Autoencoder networks
+(iv) Softmax regression networks","Solution: (i),(ii),(iii)",ML/DL,CSE251B midterm1,Multiple Choice
+True or False: Reinforcement learning agents learn by trial and error.,Solution: True,ML/DL,CSE251B midterm2,True False
+True or False: Transformers worked well because they used a feed forward network to map time into state.,Solution: False,ML/DL,CSE251B midterm2,True False
+"True or False: Modern autoregressive transformers (e.g., GPT3) having nothing in common with outdated approaches like Elman nets.",Solution: False,ML/DL,CSE251B midterm2,True False
+"True or False: In general, training a transformer is more efficient than training a RNN.",Solution: True,ML/DL,CSE251B midterm2,True False
+"True or False: Inability to generate diverse samples (i.e., mode collapse) is a common problem with GANs.",Solution: True,ML/DL,CSE251B midterm2,True False
+True or False: The receptive field of two $3 \times 3$ convolutional kernels stacked together with stride=1 is the same as that of one $5 \times 5$ convolutional kernel with stride=1.,Solution: True,ML/DL,CSE251B midterm2,True False
+True or False: Tanh units are better than the sigmoid function in the forget gate of LSTMs.,Solution: False,ML/DL,CSE251B midterm2,True False
+True or False: Q-Learning is a model-free reinforcement learning method.,Solution: True,ML/DL,CSE251B midterm2,True False
+True or False: Alpha-Go was able to beat Lee Sedol (a top-rated Go player) by making use of only Deep Reinforcement Learning.,Solution: False,ML/DL,CSE251B midterm2,True False
+"Which of the following can be used to increase the receptive field size in CNNs?
+(i) Stacking convolutional layers
+(ii) Max-pooling before moving to the next convolutional layer
+(iii) Decreasing the stride
+(iv) Decreasing the kernel size","Solution: (i), (ii)",ML/DL,CSE251B midterm2,Multiple Choice
+"Consider a simplified scenario of the Monte-Carlo Tree Search w.r.t AlphaGo. Suppose you are at a certain state and you have 2 possible actions to take. You have explored the first action once but not the second one. You now choose among the same 2 actions for that same state using Q-value + Upper Confidence Bound. Assume that the Q-values are same for both the actions for that state. Which of the following are true?
+(i) Your still choose the first action and explore the same path.
+(ii) Since Q-values are the same, you toss a coin and randomly choose b/w the two actions.
+(iii) You now choose the second action this time and explore that path
+(iv) Since Q-values are the same, you don't explore any action further.",Solution: (iii),ML/DL,CSE251B midterm2,Multiple Choice
+"Which of the following is true for Transformers?
+(i) The encoder can process the data in parallel during training
+(ii) The decoder can generate the sequence in parallel during testing
+(iii) Positional encoding helps in encoding the positional information of the input tokens.
+(iv) They easily overfit on a small dataset.","Solution: (i), (iii), (iv)",ML/DL,CSE251B midterm2,Multiple Choice
+"What of the following is true for attention mechanisms?
+(i) They use a Key to match a Value.
+(ii) In transformers, all of the matrices for one attention head are shared across positions.
+(iii) They include a softmax layer.
+(iv) By default, they keep track of the relative position of inputs.","Solution: (ii), (iii)",ML/DL,CSE251B midterm2,Multiple Choice
+"In lecture, we saw that the Atari game Montezuma's Revenge was a difficult game for traditional reinforcement learning to solve. Why was this?
+(i) It is a real-time action game with many creature races to choose from, each with different behaviors.
+(ii) It requires precise sequences of actions, such as finding a hidden key before progressing and receiving a reward.
+(iii) Later successful systems needed to be modified to promote exploration. 
+(iv) Later successful systems needed to be modified to promote exploitation.","Solution: (ii), (iii)",ML/DL,CSE251B midterm2,Multiple Choice
+"In GANs:
+(i) We freeze the parameters of the discriminator while updating the parameters of the generators.
+(ii) We can think of the input vector as analogous to the bottleneck layer in an antoencoder. 
+(iii) We backpropagate into the input vector to train a low-dimensional representation of the output.
+(iv) The vector space of the random inputs that generate good outputs is very sparse and tends to lack structure.","Solution: (i), (ii)",ML/DL,CSE251B midterm2,Multiple Choice
+"Which of the following techniques have learnable parameters?
+(i) Batch normalization
+(ii) Z-scoring
+(iii) Dropout
+(iv) Augmentation techniques",Solution: (i),ML/DL,CSE251B midterm2,Multiple Choice
+"Which of the following techniques can be used to deal with a skewed dataset?
+(i) Batch-normalization
+(ii) Weighted loss techniques
+(iii) Data Augmentation techniques
+(iv) Increasing the embedding dimension size.","Solution: (ii), (iii)",ML/DL,CSE251B midterm2,Multiple Choice
+,,,,
