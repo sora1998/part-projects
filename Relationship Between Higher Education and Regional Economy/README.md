@@ -4,9 +4,12 @@ This repository documents our research project, which aimed to investigate the r
 ### Data Sources
 Our research relied on the following primary sources of data:
 
-#### 1. Economic Data: We collected a range of economic data, including Gross Domestic Product (GDP), income levels, employment rates, and other relevant metrics.
-#### 2. Postsecondary School Data: We obtained information about the locations and numbers of postsecondary schools across different states.
-#### 3. Population Data: Population data for each state and year was utilized as a confounding variable to control for its potential influence on the relationship between the economy and PSN.
+#### 1. Economic Data: 
+We collected a range of economic data, including Gross Domestic Product (GDP), income levels, employment rates, and other relevant metrics.
+#### 2. Postsecondary School Data: 
+We obtained information about the locations and numbers of postsecondary schools across different states.
+#### 3. Population Data: 
+Population data for each state and year was utilized as a confounding variable to control for its potential influence on the relationship between the economy and PSN.
 ### Methodology
 Our research followed a structured methodology to analyze the relationship between state economies and the number of postsecondary schools. Key steps included:
 #### 1. Data Collection: Gathering economic, postsecondary school, and population data for all relevant states and years.
