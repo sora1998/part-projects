@@ -34,7 +34,7 @@ The project evaluated the performance of these three RNN architectures using BLE
 BLEU1 Score: 66
 BLEU4 Score: 8.2
 
-####Vanilla RNN Model:
+#### Vanilla RNN Model:
 BLEU1 Score: 65.7
 BLEU4 Score: 7.85
 
