@@ -12,11 +12,16 @@ We obtained information about the locations and numbers of postsecondary schools
 Population data for each state and year was utilized as a confounding variable to control for its potential influence on the relationship between the economy and PSN.
 ### Methodology
 Our research followed a structured methodology to analyze the relationship between state economies and the number of postsecondary schools. Key steps included:
-#### 1. Data Collection: Gathering economic, postsecondary school, and population data for all relevant states and years.
-#### 2. Data Preparation: Cleaning and formatting the data for analysis, including handling missing values and outliers.
-#### 3. Exploratory Data Analysis: Conducting initial data exploration to identify trends and correlations.
-#### 4. Linear Regression Analysis: Using linear regression models to statistically examine the relationship between state GDP and PSN while controlling for population.
-#### 5. Results Interpretation: Drawing conclusions based on the regression analysis and providing insights into the nature of the relationship.
+#### 1. Data Collection: 
+Gathering economic, postsecondary school, and population data for all relevant states and years.
+#### 2. Data Preparation: 
+Cleaning and formatting the data for analysis, including handling missing values and outliers.
+#### 3. Exploratory Data Analysis: 
+Conducting initial data exploration to identify trends and correlations.
+#### 4. Linear Regression Analysis: 
+Using linear regression models to statistically examine the relationship between state GDP and PSN while controlling for population.
+#### 5. Results Interpretation: 
+Drawing conclusions based on the regression analysis and providing insights into the nature of the relationship.
 ### Findings
 Based on our analysis, we made the following key findings:
 Through linear regression, we discovered a positive relationship between the number of postsecondary schools in a state and its Gross Domestic Product (GDP).
