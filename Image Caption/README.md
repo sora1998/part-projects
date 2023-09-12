@@ -1,12 +1,46 @@
+## Introduction
+This repository contains the code and models for a project focused on exploring different recurrent neural network (RNN) architectures for image captioning. In this project, we developed three distinct RNN models, each with the same image encoding backbone based on the ResNet50 model, followed by custom modifications. The goal was to investigate the impact of different RNN architectures on image captioning performance.
 
-The experiment data file is the file we use to save the experiment data we got from training the model. There are different experiment data stored in different files. 
-dataset_factory is the file we use to get and separate the data. default is the config set file we use for the model. 
+### Project Overview
+In this project, we built three RNN models with the following key components:
+Image Encoding: All three models employ the ResNet50 model to encode input images. We removed the last fully connected (fc) layer of ResNet50 and replaced it with a custom 2048-dimensional trainable fc layer.
+### Model Architectures
 
-The experiment.py is the file we create an experiment file with different functions like train, test, plot and etc. simply please just use run(train the model), test(test the model),plot_good_bad_example(plot 1 good and 1 bad examples), and load_experiment(load previous model).
+#### Baseline Model:
+Image Encoder: ResNet50 + Custom fc layer
+Decoder:
+Embedding Layer: Projects words to vectors
+LSTM Layer: Captures image-caption relationships
+Fully Connected Layer: Transforms LSTM output to vocabulary size
 
-The model_factory.py is where we define three different models for this project one is the baseline, one is RNN and one is A2(which is architecture 2). The only thing unique is the sample function which will produce sentences by one image.
+#### Vanilla RNN Model:
+Image Encoder: ResNet50 + Custom fc layer
+Decoder:
+Embedding Layer: Projects words to vectors
+Vanilla RNN Layer: Replaces LSTM for sequence modeling
+Fully Connected Layer: Transforms RNN output to vocabulary size
 
-How to use this project is pretty much to edit the main.py and default.json. 
+#### Architecture 2 (A2) Model:
+Image Encoder: ResNet50 + Custom fc layer
+Decoder:
+Image and Hidden State Fusion: Combines the hidden state and image features as input to the LSTM layer
+LSTM Layer: Utilizes the combined input for sequence modeling
+Fully Connected Layer: Transforms LSTM output to vocabulary size
 
-If you want to use the baseline model you can just simply set the argument in json. Experiment name to baseline and model to baseline. Or you can just pass them as argument variables through command. Then run main.py with exp.load_experiment() exp.run() and exp.test(), then it trying to load the last baseline experiment, if you do have previous experiment please remove exp.run() or it will report error. It will either train the model or load the model depend on depend on exp.run() , it will print the loss graph and test performance. The method to change the model is pretty simple which is just the change Experiment name   and model type. The experiment can be any name but please avoid the same experiment name with a different model setting. We have a total of 3 models that can be set as the model name described above. If you want to print 1 good and 1 bad image captions, please just call the function exp.plot_good_bad_example it will choose 1 good examples with a bleu1 score>80 and 1 bad examples which bleu1 score<45. If you want to create a new model with same experiment name please delete the original file for that experiment or it will print an error message. We also provide a function that can print the caption by image_id.
+### Model Performance
+The project evaluated the performance of these three RNN architectures using BLEU1 and BLEU4 metrics. Here are the results:
 
+#### Baseline Model:
+BLEU1 Score: 66
+BLEU4 Score: 8.2
+
+####Vanilla RNN Model:
+BLEU1 Score: 65.7
+BLEU4 Score: 7.85
+
+#### Architecture 2 (A2) Model:
+BLEU1 Score: 67.5
+BLEU4 Score: 7.8
+
+### Conclusion
+Based on the evaluation results, it can be concluded that our models were successful in generating image captions. The Architecture 2 (A2) model outperformed the others slightly in terms of BLEU1 score, suggesting that combining image features and hidden states can lead to improved caption quality. However, all three models demonstrated promising performance, showcasing the potential of different RNN architectures in image captioning tasks.Feel free to explore the code and trained models in this repository to gain a deeper understanding of each architecture and further experiment with image captioning tasks
